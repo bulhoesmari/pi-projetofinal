@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
+
+    <title>ENADE Dashboard</title>
+    <link rel="icon" type="imagem/png" href="./images/logoicon.png" />
+
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img id="logo-dash" src="./images/logo.png">
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+    
+        <!-------- aside -------->
+            <div class="sidebar">
+                <a onclick="dashboard()" class="active">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3 onclick="settings()">Configurações</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Análise</h3>
+                </a>
+                <a onclick="logout()">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            
+            </div>
+        </aside>
+
+    <!-------- end of aside --------->
+
+    <main>
+
+
+        <div class="insights">
+            
+            <div id="box1" class="cursor" onclick="tabela_1()">
+                <span class="material-icons-sharp">analytics</span>
+                <div class="middle">
+                    <div class="left">
+                        <h3>Média geral</h3>
+                            <form><select class="meses" name="anos">
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                              </select>
+                            </form>
+                        <h1>Nota: 650</h1>
+                    </div>
+                    <div class="progress">
+                        <div class="number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <!----end of sales ----->
+            <div id="box2" class="cursor" onclick="tabela_2()">
+            <div class="expenses">
+                <span class="material-icons-sharp">bar_chart</span>
+                <div class="middle">
+                    <div class="left">
+                        <h3>Média por área</h3>
+                        <form><select class="meses" name="meses">
+                            <option value="Exatas">Exatas</option>
+                            <option value="Humanas">Humanas</option>
+                            <option value="Saúde">Saúde</option>
+                          </select></form>
+                        <h1>Nota: 567</h1>
+                    </div>
+                    <div class="progress">
+                        <div class="number">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <small class="text-muted"></small>
+            </div>
+            
+            <!----end of expense ----->
+            <div id="box3" class="cursor" onclick="tabela_3()"> 
+            <div class="icome">
+                <span class="material-icons-sharp">dashboard</span> 
+                <div class="middle">
+                    <div class="left">
+                        <h3>Informações demográficas</h3>
+                        <form><select class="meses" name="meses">
+                            <option value="Renda">Renda</option>
+                            <option value="Idade">Idade</option>
+                            <option value="Gênero">Gêrero</option>
+                            <option value="Raça">Raça</option>
+                          </select></form>
+                    </div>
+                    <div class="progress">
+                        <img src="./images/pie-chart.png" id="chartpie">
+                    <div class="number">
+                        </div>
+                    </div>
+                </div>
+                <small class="text-muted"></small>
+            </div>
+        </div>
+            <!----end of icome ----->
+        </div>
+
+     <div class=" dashcontent recent-orders" id="table4">
+         <h2>Médias por curso</h2>
+         <table>
+             <thead>
+             <tr>
+                 <th>Nome</th>
+                 <th>Área</th>
+                 <th>Ano</th>
+                 <th>Nota</th>
+                 <th></th>
+             </tr>
+            </thead>
+
+           <tbody>
+                <tr>
+                    <td>Letras</td>
+                    <td>Humanas</td>
+                    <td>2021</td>
+                    <td class="warning">769</td>
+                    <td class="primary">#1</td>
+                </tr>
+                <tr>
+                    <td>Biologia</td>
+                    <td>Saúde</td>
+                    <td>2020</td>
+                    <td class="warning">752</td>
+                    <td class="primary">#2</td>
+                </tr>
+                <tr>
+                    <td>Ciência da computação</td>
+                    <td>Exatas</td>
+                    <td>2020</td>
+                    <td class="warning">751</td>
+                    <td class="primary">#3</td>
+                </tr>
+                <tr>
+                    <td>História</td>
+                    <td>Humanas</td>
+                    <td>2021</td>
+                    <td class="warning">739</td>
+                    <td class="primary">#4</td>
+                </tr>
+                <tr>
+                    <td>Administração</td>
+                    <td>Humanas</td>
+                    <td>2020</span></td>
+                    <td class="warning">727</td>
+                    <td class="primary">#5</td>
+                </tr>
+                <tr>
+                    <td>Direito</td>
+                    <td>Saúde</td>
+                    <td></span>2022</span></td>
+                    <td class="warning">695</td>
+                    <td class="primary">#6</td>
+                </tr>
+            </tbody> 
+         </table>
+         <!--<canvas id="chart1" class="canvas" hidden="hidden"></canvas>-->
+        </div>
+        <div class=" dashcontent recent-orders" id="table1">
+            <div id="background1">
+            <canvas id="chart1" class="canvas"></canvas>
+        </div>
+           </div>
+
+        <div class=" dashcontent recent-orders" id="table2">
+            <div id="background2">
+            <canvas id="chart2" class="canvas" hidden="hidden"></canvas>
+        </div>
+        </div>
+           
+       <!-- <a href="#"> mostrar mais</a>-->
+        
+       <div class=" dashcontent recent-orders" id="table3">
+        <div id="background3">
+        <canvas id="chart3" hidden="hidden"></canvas>
+        </div>
+        </div>
+    </main>   <!----------- end of main ----------->
+
+    <div class="right">
+        <div class="top">
+            <button id="menu-btn">
+                <span class="material-icons-sharp"> menu </span>
+            </button>
+            <div class="theme-toggler">
+                <span class="material-icons-sharp active"> light_mode </span>
+                <span class="material-icons-sharp"> dark_mode</span>
+            </div>
+            <div class="profile">
+                <div class ="info">
+                    <p> Olá, <b> Usuário </b></p>
+                    <small class="text-muted">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="./images/profile-1.jpg" id="foto">
+                </div>
+            </div>
+        </div>
+        <!-- END OF TOP -->
+            
+
+        <div class="sales-analytics">
+            <h2></h2>
+            <div class="item online">
+                <div class="icon">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        <h3>Letras</h3>
+                        <small class="text-muted"></small>
+                    </div>
+                    <h5 class="success">+39%</h5>
+                    <h3>305 pontos</h3>
+                </div>
+            </div>
+            <div class="item offline">
+                <div class="icon">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        <h3>Medicina</h3>
+                    </div>
+                    <h5 class="danger">-17%</h5>
+                    <h3>135 pontos</h3>
+                </div>
+            </div>
+            <div class="item Ccustomers">
+                <div class="icon">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        <h3>Biologia</h3>
+                    </div>
+                    <h5 class="success">+39%</h5>
+                    <h3>241 pontos</h3>
+                </div>
+            </div>
+
+            </div><br><br><br>
+
+            
+            <div class="insights-r" onclick="tabela_4()">
+                <h2></h2>
+                <div id="box4" class="cursor">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Meta geral</h3>
+                            <h1>712</h1>
+                            
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted"></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--<script src = "./orders.js"></script>-->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+<script src = "./dashboard.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
